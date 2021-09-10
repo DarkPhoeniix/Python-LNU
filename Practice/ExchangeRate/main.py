@@ -12,7 +12,8 @@ database_USD = open(r"database_USD.txt", "a+")
 database_RUB = open(r"database_RUB.txt", "a+")
 
 # using Google Chrome as webdriver
-options = Options()
+options = webdriver.ChromeOptions()
+options.add_experimental_option('excludeSwitches', ['enable-logging'])
 options.binary_location = "C:\Program Files\Google\Chrome\Application\chrome.exe"
 driver = webdriver.Chrome(options=options, executable_path=r'C:\geckodriver\chromedriver.exe')
 
@@ -133,6 +134,8 @@ def print_data_to_file(data, file):
 print_data_to_file(get_USD_exchange_rate(), database_USD)
 print_data_to_file(get_EUR_exchange_rate(), database_EUR)
 print_data_to_file(get_RUB_exchange_rate(), database_RUB)
+
+driver.close()
 
 database_USD.close()
 database_EUR.close()
