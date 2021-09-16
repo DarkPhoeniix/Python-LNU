@@ -19,15 +19,14 @@ def print_memory_state(memory, width):
         if memory[i] != ' ' and memory[i] != 'x':
             print(memory[i], end='')
             print('x' * (print_width - len(str(memory[i]))), end='')
-            printed = (i * 3) % print_width
         elif ((i + 1) * print_width) % (width * print_width) == 0:
             print(memory[i], end='')
-        elif i + 1 < len(memory) and memory[i] != memory[i+1]:
+        elif i + 1 < len(memory) and memory[i] != memory[i + 1]:
             print(memory[i] * (print_width - 1), end='')
         else:
             print(memory[i] * print_width, end='')
 
-        if i + 1 < len(memory) and memory[i] != memory[i+1] and memory[i+1] != 'x':
+        if (i + 1) % width != 0 and memory[i] != memory[i + 1] and memory[i + 1] != 'x':
             print('|', end='')
 
         if ((i + 1) * print_width) % (width * print_width) == 0:
@@ -66,7 +65,7 @@ memory_list = [' ' for i in range(memory_size)]
 
 print("Type 'help' for additional info.")
 while True:
-    command_list = input().split(' ')
+    command_list = input().split()
     if command_list[0] == "help":
         print_help()
     elif command_list[0] == "print":
@@ -77,4 +76,3 @@ while True:
         free_memory(memory_list, int(command_list[1]))
     elif command_list[0] == "exit":
         quit()
-
