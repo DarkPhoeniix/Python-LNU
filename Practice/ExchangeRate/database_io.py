@@ -1,6 +1,6 @@
 
 from struct_exchange_rate import ExchangeRateForDay
-from datetime import date
+from datetime import date, datetime
 
 # saving date to write in databases
 today_date = date.today()
@@ -23,6 +23,7 @@ def read_data_from_file(currency_name: str, file_name: str):
     data_list = []
     for i in range(0, len(content), 4):
         currency = ExchangeRateForDay(currency_name)
+        currency.set_today_date(datetime.strptime(content[i][0:10], "%d/%m/%Y"))
         currency.set_buy_rate(content[i + 1][0:10], float(content[i + 1][11:17]))
         currency.set_sell_rate(content[i + 1][0:10], float(content[i + 1][18:24]))
         currency.set_buy_rate(content[i + 2][0:10], float(content[i + 2][11:17]))
