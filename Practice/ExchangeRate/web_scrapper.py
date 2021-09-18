@@ -23,10 +23,10 @@ def get_usd_exchange_rate(driver: webdriver):
     )
 
     # get rate for Raiffeizen Bank by xpath
-    usd_exchange_rate.set_buy_rate('Raiffeizen Bank',
+    usd_exchange_rate.set_buy_rate('Raiffeisen Bank',
         float(driver.find_element_by_xpath('//*[@id="smTable"]/tbody/tr[4]/td[3]').text)
     )
-    usd_exchange_rate.set_sell_rate('Raiffeizen Bank',
+    usd_exchange_rate.set_sell_rate('Raiffeisen Bank',
         float(driver.find_element_by_xpath('//*[@id="smTable"]/tbody/tr[4]/td[5]').text)
     )
 
@@ -59,10 +59,10 @@ def get_eur_exchange_rate(driver: webdriver):
     )
 
     # get rate for Raiffeizen Bank by xpath
-    eur_exchange_rate.set_buy_rate('Raiffeizen Bank',
+    eur_exchange_rate.set_buy_rate('Raiffeisen Bank',
         float(driver.find_element_by_xpath('//*[@id="DataTables_Table_0"]/tbody/tr[4]/td[2]').text)
     )
-    eur_exchange_rate.set_sell_rate('Raiffeizen Bank',
+    eur_exchange_rate.set_sell_rate('Raiffeisen Bank',
         float(driver.find_element_by_xpath('//*[@id="DataTables_Table_0"]/tbody/tr[4]/td[4]').text)
     )
 
@@ -95,10 +95,10 @@ def get_rub_exchange_rate(driver: webdriver):
     )
 
     # get rate for Raiffeizen Bank by xpath
-    rub_exchange_rate.set_buy_rate('Raiffeizen Bank',
+    rub_exchange_rate.set_buy_rate('Raiffeisen Bank',
         float(driver.find_element_by_xpath('//*[@id="DataTables_Table_1"]/tbody/tr[4]/td[2]').text)
     )
-    rub_exchange_rate.set_sell_rate('Raiffeizen Bank',
+    rub_exchange_rate.set_sell_rate('Raiffeisen Bank',
         float(driver.find_element_by_xpath('//*[@id="DataTables_Table_1"]/tbody/tr[4]/td[4]').text)
     )
 
