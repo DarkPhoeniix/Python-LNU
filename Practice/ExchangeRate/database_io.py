@@ -6,6 +6,12 @@ from datetime import date, datetime
 today_date = date.today()
 
 
+# get struct of exchange rate and file to write to
+# format:
+# <date>
+# <bank_1>  <buy_rate>  <sell_rate>
+# <bank_2>  <buy_rate>  <sell_rate>
+# <bank_3>  <buy_rate>  <sell_rate>
 def print_data_to_file(data: ExchangeRateForDay, file_name: str):
     file = open(file_name, 'a+')
     file.write(today_date.strftime("%d/%m/%Y") + '\n')
@@ -17,6 +23,8 @@ def print_data_to_file(data: ExchangeRateForDay, file_name: str):
     file.close()
 
 
+# read data about currency from specified file
+# return list of struct_exchange_rate
 def read_data_from_file(currency_name: str, file_name: str):
     file = open(file_name, 'r')
     content = file.readlines()

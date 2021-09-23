@@ -2,6 +2,8 @@
 from struct_exchange_rate import ExchangeRateForDay
 
 
+# parse data into 3 blocks (banks) and divide buy and sell rates into two lists
+# return buy and sell rates of three banks
 def parse_data(exchange_rate: [ExchangeRateForDay]):
     parsed_data = [[[], []], [[], []], [[], []]]
     for i in exchange_rate:
@@ -12,4 +14,3 @@ def parse_data(exchange_rate: [ExchangeRateForDay]):
         parsed_data[2][0].append(i.exchange_rates.get('Raiffeisen Bank')[0])
         parsed_data[2][1].append(i.exchange_rates.get('Raiffeisen Bank')[1])
     return parsed_data
-
