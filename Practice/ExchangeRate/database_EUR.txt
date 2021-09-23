@@ -1,7 +1,3 @@
-05/09/2021
-PrivatBank	31.550	32.150	
-Oschadbank	31.550	32.200	
-Raiffeisen Bank	31.380	32.030	
 08/09/2021
 PrivatBank	31.400	32.000	
 Oschadbank	31.450	32.050	
@@ -17,7 +13,11 @@ Raiffeisen Bank	31.050	31.700
 11/09/2021
 PrivatBank	31.400	32.000	
 Oschadbank	31.400	31.920	
-Raiffeisen Bank	31.050	31.700	
+Raiffeisen Bank	31.050	31.700
+12/09/2021
+PrivatBank	31.300	32.400
+Oschadbank	31.400	31.920
+Raiffeisen Bank	31.050	31.700
 13/09/2021
 PrivatBank	31.200	31.800	
 Oschadbank	31.350	31.900	
@@ -30,3 +30,31 @@ Raiffeisen Bank	31.060	31.700
 PrivatBank	31.200	31.800	
 Oschadbank	31.250	31.750	
 Raiffeisen Bank	31.280	31.740	
+16/09/2021
+PrivatBank	31.200	31.800	
+Oschadbank	31.220	31.700	
+Raiffeisen Bank	31.250	31.670	
+17/09/2021
+PrivatBank	31.100	31.700	
+Oschadbank	31.100	31.580	
+Raiffeisen Bank	30.980	31.610	
+18/09/2021
+PrivatBank	31.100	31.700	
+Oschadbank	31.100	31.580	
+Raiffeisen Bank	30.980	31.610	
+19/09/2021
+PrivatBank	31.100	31.700	
+Oschadbank	31.100	31.580	
+Raiffeisen Bank	30.980	31.610	
+20/09/2021
+PrivatBank	30.900	31.500	
+Oschadbank	31.100	31.580	
+Raiffeisen Bank	31.060	31.550
+21/09/2021
+PrivatBank	30.900	31.500
+Oschadbank	31.050	31.530
+Raiffeisen Bank	31.400	31.530
+22/09/2021
+PrivatBank	30.900	31.500	
+Oschadbank	31.000	31.480	
+Raiffeisen Bank	30.880	31.510	
