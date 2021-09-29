@@ -31,6 +31,10 @@ for i in lines:
 # sorting by route length
 routes.sort(key=lambda x: x.route_length)
 
+print("All routes sorted by length:\n")
+for i in routes:
+    print(i)
+
 # finding routes with average length between stops less then <length_x>
 length_x = int(input("Print number of routes with average length between stops less than "))
 print("Number of routes with average length between stops less than " + str(length_x) + ": ", end='')
@@ -41,13 +45,18 @@ for i in routes:
 print(num)
 
 # finding routes with start station <station_x>
-station_x = input("Input start station: ")
+station_x = input("\nInput start station: ")
+print("")
 new_list = [i for i in routes if i.start_station == station_x]
-for i in new_list:
-    print(i)
+if len(new_list) == 0:
+    print("No buse start route from here")
+else:
+    for i in new_list:
+        print(i)
 
 # finding routes with maximal number of stops
-print("Routes with maximal number of stops: ")
+print("\nRoutes with maximal number of stops:\n")
+max_num = max(routes, key=lambda x: x.stations_num).stations_num
 for i in routes:
-    if i.stations_num == max(routes, key=lambda x: x.stations_num).stations_num:
+    if i.stations_num == max_num:
         print(i)
