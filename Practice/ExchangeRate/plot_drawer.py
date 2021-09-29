@@ -8,7 +8,12 @@ import matplotlib.pyplot as plt
 
 
 def draw_plot(start_day: date, end_day: date, exchange_rates: [ExchangeRateForDay]):
-    #
+    # checking dates boundaries
+    if (datetime.strptime(exchange_rates[0].today, "%d/%m/%Y").date() > start_day) or \
+       (datetime.strptime(exchange_rates[-1].today, "%d/%m/%Y").date() < end_day):
+        print("No such data in files")
+
+    # read available dates from files
     specified_data = [i for i in exchange_rates if datetime.strptime(i.today, "%d/%m/%Y").date() >= start_day and \
                                                    datetime.strptime(i.today, "%d/%m/%Y").date() <= end_day]
     data = parse_data(specified_data)
@@ -60,6 +65,6 @@ def draw_plot(start_day: date, end_day: date, exchange_rates: [ExchangeRateForDa
 
     # set subplots positions
     plt.subplots_adjust(left=0.08, bottom=0.15, right=0.8, top=0.85)
-    plt.legend(bbox_to_anchor=(1.8, 0.5), loc='center right', borderaxespad=0., fontsize=8)
+    plt.legend(bbox_to_anchor=(1.8, 0.5), loc='center right', borderaxespad=0., fontsize=10)
 
     plt.show()
