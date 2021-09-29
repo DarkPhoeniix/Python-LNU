@@ -35,6 +35,10 @@ def draw_plot(start_day: date, end_day: date, exchange_rates: [ExchangeRateForDa
         k, b = point_forecasting.line_by_least_squares_method([numbers, data[i][1]])
         forecast[i][1] = list((x*k+b) for x in range(len(forecast_dates)))
 
+    # print("Forecast for 'PrivatBank': \t" + forecast[0][0] + ' ' + forecast[0][1])
+    # print("Forecast for 'Oschadbank': \t" + forecast[1][0] + ' ' + forecast[1][1])
+    # print("Forecast for 'Raiffeisen Bank': \t" + forecast[2][0] + ' ' + forecast[2][1])
+
     # set titles
     axs[0].set_title('PrivatBank')
     axs[1].set_title('Oschadbank')
@@ -47,6 +51,7 @@ def draw_plot(start_day: date, end_day: date, exchange_rates: [ExchangeRateForDa
         axs[i].plot(dates, data[i][1], 'o', ls='-', ms=4, color='#A64A00', label='sale rate')
         axs[i].plot(forecast_dates, forecast[i][1], color='#FFB173')
         axs[i].plot(forecast_dates[-1], forecast[i][1][-1], 'o', ls='-', ms=4, color='#FFB173', label='sale forecast')
+        axs[i].annotate(str(round(forecast[i][0][-1], 3)), (forecast_dates[-1], forecast[i][0][-1]), textcoords="offset points", xytext=(0,10), ha='center', fontsize=7)
 
     # calculate size of each plot
     min_lim = min(min(data[0][0]) - 0.2, min(data[1][0]) - 0.2, min(data[2][0]) - 0.2)
