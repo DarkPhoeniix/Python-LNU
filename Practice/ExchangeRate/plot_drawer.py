@@ -48,10 +48,12 @@ def draw_plot(start_day: date, end_day: date, exchange_rates: [ExchangeRateForDa
         axs[i].plot(dates, data[i][0], 'o', ls='-', ms=4, color='#006561', label='purchase rate')
         axs[i].plot(forecast_dates, forecast[i][0], color='#5CCDC9')
         axs[i].plot(forecast_dates[-1], forecast[i][0][-1], 'o', ls='-', ms=4, color='#5CCDC9', label='purchase forecast')
+        axs[i].annotate(str(round(forecast[i][1][-1], 2)), (forecast_dates[-1], forecast[i][1][-1]),
+                        textcoords="offset points", xytext=(0, 10), ha='center', fontsize=7)
         axs[i].plot(dates, data[i][1], 'o', ls='-', ms=4, color='#A64A00', label='sale rate')
         axs[i].plot(forecast_dates, forecast[i][1], color='#FFB173')
         axs[i].plot(forecast_dates[-1], forecast[i][1][-1], 'o', ls='-', ms=4, color='#FFB173', label='sale forecast')
-        axs[i].annotate(str(round(forecast[i][0][-1], 3)), (forecast_dates[-1], forecast[i][0][-1]), textcoords="offset points", xytext=(0,10), ha='center', fontsize=7)
+        axs[i].annotate(str(round(forecast[i][0][-1], 2)), (forecast_dates[-1], forecast[i][0][-1]), textcoords="offset points", xytext=(0,10), ha='center', fontsize=7)
 
     # calculate size of each plot
     min_lim = min(min(data[0][0]) - 0.2, min(data[1][0]) - 0.2, min(data[2][0]) - 0.2)
